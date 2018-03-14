@@ -40,14 +40,25 @@ nav ul {
 	padding:0;
 	text-align: center;
 }
-/* On passe le ul de niveau 1 en position relative */
-nav > ul {
-    position:relative;
+/* On passe le 1er niveau de li en display inline-block */
+nav > ul > li {
+    display:inline-block;
 }
+/* On passe les li en position relative */
 /* On attribue une largeur et une hauteur aux nav li */
 nav li {
+	position:relative;
     width:160px;
     line-height: 50px;
+}
+/* On met les niveaux 2 et 3 en position absolue */
+nav ul ul, nav ul ul ul {
+    position:absolute;
+	display:none;
+	opacity: 0.9;
+}
+/* On aligne les li des sous-menu à gauche */
+nav li li, nav li li li {
     text-align:left;
 }
 /* On style les liens de la nav */
@@ -60,50 +71,35 @@ nav a {
 nav li a:hover {
 	background: #9E9E9E;
 }
-/* On passe le 1er niveau de li en display inline-block */
-nav > ul > li {
-    display:inline-block;
-    text-align:center;
-}
-/* On met les niveaux 2 et 3 en position absolue */
-nav ul ul, nav ul ul ul {
-    position:absolute;
-		display:none;
-		opacity: 0.9;
-}
-/* Facultatif : on ajoute un border-bottom sur les li des 2ème et 3ème niveaux (sauf sur le dernier) */
+/* Facultatif : on ajoute un border-bottom sur les li des sous-menus (sauf sur le dernier) */
 nav ul ul li {
     border-bottom: 1px solid #E8EAF6;
 }
 nav ul ul li:last-child {
     border-bottom: 0;
 }
-/* On ajoute un padding sur les a des 2ème et 3ème niveaux */
+/* On ajoute un padding à gauche sur les a des sous-menus */
 nav ul ul li a {
     padding-left:15px;
     box-sizing:border-box;
-}
-/* On décale le sous-menu de niveau 3 de la largeur et de la hauteur des li */
-nav ul ul ul {
-		left:160px;
-    top:0;
 }
 /* On affiche les sous-menu de niveau 2 et 3 au survol de la souris */
 nav > ul > li:hover > ul, nav li li:hover > ul {
 	display: block;
 }
-/* Les li de niveau 1 qui ont la classe deeper passent en position relative */
-nav li.deeper {
-	position:relative;
+/* On décale le sous-menu de niveau 3 de la largeur des li */
+nav ul ul ul {
+	left:160px;
+    top:0;
 }
-/* On ajouter le caractère angle-down de FOnt Awesome pour indiquer le sous-menu de niveau 2 */
+/* On ajoute le caractère angle-down de Font Awesome pour indiquer le sous-menu de niveau 2 */
 nav li.deeper > a::after {
 	font-family: "FontAwesome";
 	content: " \f107";
 	position: absolute;
-	right: 5px;
+	right: 10px;
 }
-/* On ajouter le caractère angle-right de FOnt Awesome pour indiquer le sous-menu de niveau 3 */
+/* On ajoute le caractère angle-right de Font Awesome pour indiquer le sous-menu de niveau 3 */
 nav li li.deeper > a::after {
 	content: " \f105";
 }
