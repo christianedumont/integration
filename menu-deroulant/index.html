@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="utf-8" />
         <title>Menu déroulant 3 niveaux</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -14,30 +13,36 @@
 			<nav class="container">
 				<ul>
 					<li><a href="#">Lien 1</a></li>
-					<li><a href="#">Lien 2</a>
+					<li class="deeper"><a href="#">Lien 2</a>
 						<ul>
 							<li><a href="#">Lien 2.1</a></li>
 							<li><a href="#">Lien 2.2</a></li>
 							<li><a href="#">Lien 2.3</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Lien 3</a>
+					<li class="deeper"><a href="#">Lien 3</a>
 						<ul>
-							<li><a href="#">Lien 3.1</a></li>
-							<li><a href="#">Lien 3.2</a>
+							<li class="deeper"><a href="#">Lien 3.1</a>
+                				<ul>
+									<li><a href="#">Lien 3.1.1</a></li>
+									<li><a href="#">Lien 3.1.2</a></li>
+								</ul>
+              				</li>
+							<li class="deeper"><a href="#">Lien 3.2</a>
 								<ul>
 									<li><a href="#">Lien 3.2.1</a></li>
 									<li><a href="#">Lien 3.2.2</a></li>
+                  					<li><a href="#">Lien 3.2.3</a></li>
 								</ul>
 							</li>
-							<li><a href="#">Lien 3.3</a></li>
-						</ul>
-					</li>
-					<li class="hamburger"><a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
-						<ul>
-							<li><a href="#">Lien 1</a></li>
-							<li><a href="#">Lien 2</a></li>
-							<li><a href="#">Lien 3</a></li>
+							<li class="deeper"><a href="#">Lien 3.3</a>
+                				<ul>
+									<li><a href="#">Lien 3.3.1</a></li>
+									<li><a href="#">Lien 3.3.2</a></li>
+                  					<li><a href="#">Lien 3.3.3</a></li>
+                  					<li><a href="#">Lien 3.3.4</a></li>
+								</ul>
+              </li>
 						</ul>
 					</li>
 				</ul>
