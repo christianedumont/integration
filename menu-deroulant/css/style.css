@@ -1,3 +1,6 @@
+/*----------------------
+Styles généraux
+----------------------*/
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size:1em;
@@ -47,19 +50,15 @@ nav li {
     line-height: 50px;
     text-align:left;
 }
-nav li.hamburger {
-	display: none;
+/* On style les liens de la nav */
+nav a {
+	color:inherit;
+	display:block;
+	width:100%;
 }
 /* On modifie le style au survol de la souris */
 nav li a:hover {
 	background: #9E9E9E;
-}
-/* On style les liens de la nav */
-nav a {
-	/*color:#FFFFFF;*/
-	color:inherit;
-	display:block;
-	width:100%;
 }
 /* On passe le 1er niveau de li en display inline-block */
 nav > ul > li {
@@ -87,22 +86,39 @@ nav ul ul li a {
 /* On décale le sous-menu de niveau 3 de la largeur et de la hauteur des li */
 nav ul ul ul {
 		left:160px;
-    top:50px;
+    top:0;
 }
 /* On affiche les sous-menu de niveau 2 et 3 au survol de la souris */
 nav > ul > li:hover > ul, nav li li:hover > ul {
 	display: block;
 }
+/* Les li de niveau 1 qui ont la classe deeper passent en position relative */
+nav li.deeper {
+	position:relative;
+}
+/* On ajouter le caractère angle-down de FOnt Awesome pour indiquer le sous-menu de niveau 2 */
+nav li.deeper > a::after {
+	font-family: "FontAwesome";
+	content: " \f107";
+	position: absolute;
+	right: 5px;
+}
+/* On ajouter le caractère angle-right de FOnt Awesome pour indiquer le sous-menu de niveau 3 */
+nav li li.deeper > a::after {
+	content: " \f105";
+}
+/*-------------
+Styles du main
+--------------*/
 h1 {
 	color: #00BCD4;
 }
-main, footer {
-	position:relative;
-	top:50px;
-}
 main {
-	padding:0 20px;
+	padding:50px 20px 0;
 }
+/*---------------
+Styles du footer
+----------------*/
 footer {
 	text-align: center;
 	background-color: #4DD0E1;
@@ -122,22 +138,4 @@ footer a.top {
 	position:absolute;
 	bottom:10px;
 	right:10px;
-}
-@media screen and (max-width: 480px) {
-	nav > ul > li {
-		display:none;
-	}
-	 nav li.hamburger {
-		display: block;
-		text-align:left;
-		width:auto;
-	}
-	nav li.hamburger a {
-		font-family: FontAwesome;
-		content:"\f0c9";
-		padding-left:15px;
-	}
-	nav li.hamburger ul, nav li.hamburger ul li {
-		width:100%;
-	}
 }
